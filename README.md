@@ -25,7 +25,7 @@ A web-based tool designed to help Shopify partners create comprehensive AI case 
 
 ## Live Demo
 
-You can access the live tool at: [GitHub Pages URL will be here once deployed]
+You can access the live tool at: https://akonysmoren.github.io/AI-Case-Study-Tool-Partners/
 
 ## Contributing
 
