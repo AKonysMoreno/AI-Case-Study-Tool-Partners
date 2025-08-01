@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI case study tool for Shopify partners</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI case study tool for Shopify partners</h1>
+        </header>
+
+        <nav class="step-progress-nav">
+            <div class="step-progress-container">
+                <div class="step-progress-bar">
+                    <div class="step-progress-fill" id="stepProgressFill"></div>
+                </div>
+                <div class="step-markers">
+                    <div class="step-marker" data-step="intro">
+                        <div class="step-dot"></div>
+                        <div class="step-label">Start here</div>
+                    </div>
+                    <div class="step-marker" data-step="step1">
+                        <div class="step-dot"></div>
+                        <div class="step-label">Step 1: Select your AI tool</div>
+                    </div>
+                    <div class="step-marker" data-step="step2">
+                        <div class="step-dot"></div>
+                        <div class="step-label">Step 2: Train your model</div>
+                    </div>
+                    <div class="step-marker" data-step="step3">
+                        <div class="step-dot"></div>
+                        <div class="step-label">Step 3: Choose your adventure</div>
+                    </div>
+                    <div class="step-marker" data-step="step4">
+                        <div class="step-dot"></div>
+                        <div class="step-label">Step 4: Draft the case study</div>
+                    </div>
+                    <div class="step-marker" data-step="step5">
+                        <div class="step-dot"></div>
+                        <div class="step-label">Step 5: Check for details</div>
+                    </div>
+                    <div class="step-marker" data-step="step6">
+                        <div class="step-dot"></div>
+                        <div class="step-label">Step 6: Edit your draft</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="content">
+            <!-- Intro Section -->
+            <section class="step-content active" id="intro">
+                <h2>Write a case study</h2>
+                <div class="content-area">
+
+                    <h3>Ground rules</h3>
+                    <ul>
+                        <li><strong>These prompts were curated for use with ChatGPT or Claude.</strong> For the best results, we recommend you use one of these AI tools.</li>
+                        <li><strong>Better inputs make for better outputs.</strong> The more detail you feed into the model, the more useful and informative the case study will be. Lean on being overly detailed and descriptive. Don't skip any requested inputs.</li>
+                        <li><strong>Check (and double check!) the accuracy of the outputs.</strong> AI is a great tool, but it has a tendency to hallucinate, especially when it's not given enough information.</li>
+                        <li><strong>Put your human abilities to work.</strong> While the outputs of these prompts act as a strong starting point, they're not perfect. Still put a dedicated effort into revising and shaping your case study. We'll all benefit from it!</li>
+                    </ul>
+
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-primary" onclick="goToStep('step1')">Get started</button>
+                </div>
+            </section>
+
+            <!-- Step 1: Select AI Tool -->
+            <section class="step-content" id="step1">
+                <h2>Step 1: What is your AI tool?</h2>
+                <div class="content-area">
+                    
+                    <div class="path-selection">
+                        <button class="path-btn" onclick="selectToolAndProceed('pro')" style="position: relative;">
+                            <h3>✨ Pro AI tooling account</h3>
+                            <p>ChatGPT Pro or Claude Pro</p>
+                                <div style="position: absolute; top: 10px; right: 10px; background-color: #28a745; color: white; padding: 4px 12px; border-radius: 12px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); z-index: 10;">Recommended</div>
+                        </button>
+                        <button class="path-btn" onclick="selectToolAndProceed('free')">
+                            <h3>🆓 Free AI tooling account</h3>
+                            <p>GPT-3.5 or Claude.ai</p>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" onclick="goToStep('intro')">Back</button>
+                </div>
+            </section>
+
+            <!-- Step 2: Train your model -->
+            <section class="step-content" id="step2">
+                <h2>Step 2: Train your model</h2>
+                <div class="content-area">
+                    <p>Choose your training path:</p>
+                    <div class="path-selection">
+                        <button class="path-btn" onclick="goToStep('step2a')">
+                            <h3>With a Pro Account</h3>
+                            <p>For users with premium AI tool access</p>
+                        </button>
+                        <button class="path-btn" onclick="goToStep('step2b')">
+                            <h3>With a Free Account</h3>
+                            <p>For users with basic AI tool access</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" onclick="goToStep('step1')">Back</button>
+                </div>
+            </section>
+
+            <!-- Step 2A: Pro Account -->
+            <section class="step-content" id="step2a">
+                <h2>Step 2: Train your model</h2>
+                <h3>With a pro account</h3>
+                <div class="content-area">
+                    <p>We recommend using the Pro version of either ChatGPT or Claude for the best draft output. To get started, you'll complete two actions below.</p>
+
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Action 1: Input this prompt into your AI tool</div>
+                            <button class="copy-btn">Copy to Clipboard</button>
+                        </div>
+                        <div class="prompt-content">You are a former journalist at Time magazine, and you've had a few articles published in The New Yorker. You know how to write very well, keeping your articles professional but not corporate. You appreciate a well-timed quippy sentence. You've moved from your career as a journalist and now write case studies that are used by a big tech company to market to merchants who are looking for a new commerce platform but want a partner to help them. Your writing balances professional clarity with engaging narrative—maintaining credibility while avoiding corporate jargon. You excel at transforming technical implementations into business-focused stories that resonate with decision-makers.
+
+As a case study writer for a leading commerce platform, your expertise includes:
+- Extracting the most compelling metrics and business outcomes from complex projects
+- Structuring narratives that highlight both partner expertise and merchant transformation
+- Creating concise, scannable content that emphasizes quantifiable results
+- Balancing technical implementation details with strategic business impact
+- Maintaining brand voice while adapting to various industries and merchant types
+
+Your task is to create a high-quality case study that showcases how a partner agency helped a merchant succeed with Shopify. The content should highlight the partner's approach, the technical solution implemented, and the measurable business impact for the merchant—all while maintaining a professional but accessible tone that appeals to potential commerce platform customers.
+
+I'm going to give you an artifact doc. It contains case study examples, a case study template, and some additional style guidelines. I'd like you to learn the voice, tone, style, and formatting of them.
+
+Next, I'm going to give you information about a new partner and merchant that we'd like to write a new case study about. Use the relevant information throughout the case study as you see fit to match the voice, tone, style, and formatting of the examples. Do not include any information from the examples in this draft, and do not pull anything from the web. Also do not edit the provided quotes, and instead use them directly.
+
+After taking in this information, you can get to work writing a draft that matches the voice, tone, style, and formatting of the examples, but uses the information provided on the new customer.
+
+Once you're ready, say "My training is now complete! I'm ready to help you draft a new case study. Remember: The more specific information you share, the better the draft will be!
+
+You can input that information now."</div>
+                    </div>
+
+                    <div style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 2rem; margin: 1.5rem 0;">
+                        <div class="prompt-title">Action 2: Attach this artifact doc into your AI tool</div>
+                        <a href="https://content.shopify.com/i/Id7lDIbYsjtHKter3tOCeXyND1suM1H7alZrBbKZZ0VYOybXw8LJCDPeTseHPGYFFokOMsKaiOeBPLUSSIGNiTE5___8OObWBtfuxH18s1I8uH3V2yFdUcHjnKqZYQezVINgUFJkC" target="_blank" style="display: inline-block; background-color: #4CAF50; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            📄 Download artifact document
+                        </a>
+                    </div>
+
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" onclick="goToStep('step1')">Back</button>
+                    <button class="btn btn-primary" onclick="goToStep('step3')">Next: Step 3</button>
+                </div>
+            </section>
+
+            <!-- Step 2B: Free Account -->
+            <section class="step-content" id="step2b">
+                <h2>Step 2: Train your model</h2>
+                <h3>With a free account</h3>
+                <div class="content-area">
+                    <p>Copy and paste each training prompt into your tool, pressing ENTER after each prompt.</p>
+                    
+
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Training prompt 1</div>
+                            <button class="copy-btn">Copy to Clipboard</button>
+                        </div>
+                        <div class="prompt-content">You are a former journalist at Time magazine, and you've had a few articles published in The New Yorker. You know how to write very well, keeping your articles professional but not corporate. You appreciate a well-timed quippy sentence. You've moved from your career as a journalist and now write case studies that are used by a big tech company to market to merchants who are looking for a new commerce platform but want a partner to help them. Your writing balances professional clarity with engaging narrative—maintaining credibility while avoiding corporate jargon. You excel at transforming technical implementations into business-focused stories that resonate with decision-makers.
+
+As a case study writer for a leading commerce platform, your expertise includes:
+- Extracting the most compelling metrics and business outcomes from complex projects
+- Structuring narratives that highlight both partner expertise and merchant transformation
+- Creating concise, scannable content that emphasizes quantifiable results
+- Balancing technical implementation details with strategic business impact
+- Maintaining brand voice while adapting to various industries and merchant types
+
+Your task is to create a high-quality case study that showcases how a partner agency helped a merchant succeed with Shopify. The content should highlight the partner's approach, the technical solution implemented, and the measurable business impact for the merchant—all while maintaining a professional but accessible tone that appeals to potential commerce platform customers.
+
+I'm going to give you a series of case study examples. I'd like you to learn the voice, tone, style, and formatting of them. I'm going to input each example individually. After each example is input, confirm by saying, "Training input confirmed!"</div>
+                    </div>
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Training prompt 2</div>
+                            <button class="copy-btn">Copy to Clipboard</button>
+                        </div>
+                        <div class="prompt-content">CASE STUDY EXAMPLE 2
+ATTITUDE Living launches multi-country stores on Shopify Hydrogen and Oxygen, increasing new customers by 9%
+
+Inspired by the founder's desire to provide clean and effective products for his growing family, ATTITUDE Living embodies a deep commitment to transparency and care—both for individuals and the planet. Since 2006, ATTITUDE has been on a mission to revolutionize the home, body, and face industry by offering clean products in eco-innovative packaging designed to reduce plastic.
+
+When their front-end technology provider announced it was sunsetting its platform, ATTITUDE was in need of a new solution that would empower them to build informative, dynamic product pages. They wanted to expand their existing Shopify footprint, appreciating the design flexibility and the site speed that the headless approach already gave them on the back end. And they looked to Novatize as the partner to help them achieve it.
+
+By migrating their front end to Shopify, ATTITUDE saw these results:
+9% increase in new customers
+15% increase in average revenue per user (ARPU)
+10% increase in average order value (AOV)
+40% improvement in page load time
+
+The challenge: Choosing a fast and flexible headless architecture
+With their front-end technology no longer supported, ATTITUDE looked to implement a new headless architecture. They'd also recently needed to migrate off a third-party content management system (CMS), so they wanted a front end that could independently support their content needs. 
+
+With Shopify's UX/UI flexibility and powerful site speed, ATTITUDE knew it was the right choice. Faced with the high competition of the beauty industry, they wanted their front-end design to stand out while still being lightning fast. Specifically, they wanted to display all relevant images, brand messaging, and product information on product detail pages (PDPs), as well as build a creative way to help customers discover their wide range of products with a new menu banner.
+
+Beyond improving the experience across their pages, ATTITUDE also looked to consolidate multiple stores down to one in each region. That way, they could focus on optimizing operations and unifying their brand identity, along with lower costs and reducing third-party dependent maintenance fees.
+
+With their decision to migrate to Shopify locked in, ATTITUDE needed the right partner to make it happen. For this, they had three criteria—the partner needed to be Shopify certified, local to their Montreal, Canada headquarters, and speak French. As a firm specializing in unified commerce, Novatize checked all of the boxes.
+
+The solution: Building clean, dynamic sites with Shopify Hydrogen and Oxygen
+With Novatize on board, the team set to migrate the front end of ATTITUDE's websites to Shopify. Above all else, ATTITUDE wanted their sites to be both high performing and easy to maintain. Using Shopify Hydrogen as the headless commerce solution, combined with Shopify Oxygen for global hosting, Novatize built the sites with Remix to keep the custom storefronts performing quickly with a modern, streamlined developer experience.
+
+From there, Novatize and ATTITUDE shifted the focus to elevating the sites' design and shopper experiences, using the Shogun app as their landing page builder.
+
+Creating custom pages with Shopify metaobjects
+Using Shopify's metaobjects and metafields, ATTITUDE now dynamically manages content without relying on an external CMS. They can easily customize product pages and market-specific information directly through Shopify. Also, because Novatize rebuilt their websites using a single master site, the team can seamlessly manage content, products, and campaigns across multiple markets and languages.
+
+Take ATTITUDE's sun care product discovery page. It features interactive filters that help shoppers quickly find products that match their specific needs, such as UV protection level or natural ingredients. This approach enhances the shopping experience by giving visitors the ability to filter and discover relevant products, while the simple and modern visual design reinforces ATTITUDE's eco-friendly mission by highlighting their commitment to environmental protection through planet-friendly product choices.
+
+From there, each product page is designed to highlight clear and detailed information such as natural ingredients, eco-friendly certifications, and the benefits of the product for the skin and the environment. With several certifications—including EWG VERIFIED, PETA, and FSC—ATTITUDE uses cutting-edge scientific research to ensure their products are free from harmful ingredients. The dynamic structure combines server-side rendering with client-side interactivity to recommend complementary products based on the shopper's preferences or previous purchases, such as additional care adapted to their routine.
+
+The results: An optimized international headless platform
+Now that all of ATTITUDE's sites share the same headless Shopify Hydrogen codebase, the team manages a flexible environment that's ready for future projects. The dynamic Hydrogen architecture allows ATTITUDE to deliver a consistent user experience and meet the specific needs of each market, resulting in a 9% increase in new customers. The implemented solution also offers intuitive Shopify store management in two distinct languages, French and English, across multiple sales regions in Canada and the US—creating a 15% increase in average purchase revenue per user.
+
+"We're proud to have partnered with ATTITUDE Living to build a high-performance, headless Shopify Hydrogen storefront that reflects their commitment to sustainability. Throughout the project, we have worked with their team to ensure they have full control over the solution moving forward."
+—Philippe Pâquet-De Varennes, Vice President of Sales, Novatize
+
+By opting for a purely headless architecture native to Shopify that doesn't rely on a third-party CMS, Novatize eliminated caching delays and unnecessary costs. Instead, that necessary functionality is built directly into the Shopify application API, guaranteeing a fluid and responsive user experience in all languages, improving page load time by 40%, and ultimately helping ATTITUDE grow their business.</div>
+                    </div>
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Training prompt 3</div>
+                            <button class="copy-btn">Copy to Clipboard</button>
+                        </div>
+                        <div class="prompt-content">CASE STUDY EXAMPLE 3
+Stadium Goods achieved an 80% increase in conversion with VAAN and Shopify
+
+
+Stadium Goods, a leader in rare sneakers and streetwear, faced mounting challenges with their bespoke ecommerce platform FPS, including slow site speed, high maintenance costs, and limited scalability. The Stadium Goods site was hindering the brand's ability to grow and maintain their reputation for exceptional service. Partnering with VAAN and Shopify, Stadium Goods replatformed to Shopify to unlock greater efficiency, flexibility, and customer satisfaction.
+
+Since moving to Shopify and working with VAAN, Stadium Goods has seen:
+
+An 80% overall increase in conversion rate
+A 36% YOY increase in Black Friday and Cyber Monday (BFCM) web conversion rate
+A 100% YOY increase in BFCM app conversion rate
+A 46% increase in add-to-cart rate
+
+The challenge: Scaling a marketplace for rare sneakers
+Stadium Goods built their reputation as a go-to marketplace for rare sneakers and streetwear with a unique two-way model that tracks serialized inventory and assigns custom prices to individual items. However, as the business scaled into a direct-to-consumer and multichannel powerhouse, their custom ecommerce platform became a liability.
+
+Their bespoke platform suffered with slow site speeds, frequent technical challenges, and high maintenance costs, which limited Stadium Goods' ability to grow and adapt quickly. They needed a modern, scalable solution that could handle their complex marketplace operations while enhancing the customer experience and reducing operational inefficiencies.
+
+"The Stadium Goods team, like many merchants, often discussed migrating to Shopify due to roadblocks with their current platform while having unique consigner requirements. By working in lockstep with Vann and Stadium Goods, we were able to propose a solution that not only met their needs but also positions them well for future growth."
+—Allyssa Wickens, Account Executive Large Accounts, Shopify
+
+The solution: Migrating to Shopify before the holiday season
+To address these challenges, Stadium Goods partnered with VAAN to migrate from their custom bespoke platform to Shopify. The project required a rapid turnaround to ensure the new platform was live before the peak of the holiday season. Detailed guidance on optimizing product structure, data migration paths, and aligning their PIM and OMS workflows was vital. Key aspects of the solution included:
+
+Data migration oversight: Migration of the extensive product catalog, serialized inventory, and customer data to Shopify ensured the integrity of their marketplace model.
+Optimized design: Applying their Brand Conversion Design philosophy, the VAAN team optimized the site design in accordance with Shopify theme-design paradigms.
+Custom integrations: Tapcart was implemented for mobile app functionality and Braze for advanced email marketing, supporting Stadium Goods' omnichannel strategy.
+Back-end flexibility: The migration simplified content and theme management, allowing the internal team to handle updates while freeing developers to focus on innovation.
+
+"VAAN has been an incredibly nimble, collaborative, and impactful partner, helping us migrate from a custom eCommerce platform to Shopify at lightning speed. We set a very aggressive timeline (in spite of our size and complexity), and we hit it, landing one of the smoothest platform migrations I've seen, in time for holiday peak. A few weeks post-transition, we're already seeing a double-digit improvement in conversion rate, and material reduction in our cost of ownership. VAAN was instrumental in this achievement."
+—Illarion Koperski, CTO, Stadium Goods
+
+The Results: Dramatic increases in conversion and add-to-cart rate
+The transition to Shopify transformed Stadium Goods' ecommerce performance. The platform's robust infrastructure and VAAN's streamlined design contributed to an 80% increase in conversion rates and substantial savings in total cost of ownership.
+
+Stadium Goods' journey to Shopify highlights the impact of a well-executed platform migration. With VAAN's expertise, they've not only solved the issues of speed, flexibility, and cost, but have positioned themselves for scalable, sustainable growth in the DTC market.
+
+"At VAAN, we prioritize leveraging public dependencies and resources to ensure flexibility and compatibility with Stadium Goods' preferred systems. This approach enabled a seamless migration to GitLab alongside the transition to Shopify. By utilizing docker containers to encapsulate processes, we ensured consistent functionality regardless of the environment in which they run."
+—Illarion Koperski, CTO, Stadium Goods
+
+"Our goal is to empower clients by providing everything they need—whether it's direct access to the code or ensuring any external dependencies are publicly available," says Illarion Koperski. "This way, we avoid creating restrictions or owning critical components, giving merchants full access and control over their systems."
+
+The Stadium Team also saw an increase of 46% in add-to-cart rate as a result of replatforming to Shopify, as well as significant year-over-year increases in conversion during their peak Black Friday Cyber Monday sales with a 36% YOY increase in BFCM web conversion rate and a 100% YOY increase in BFCM app conversion rate with their Tapcart instance.
+
+The Shopify replatforming has given Stadium Goods a powerful, adaptable digital presence that resonates with their brand and supports their future ambitions. Through a strategic partnership with VAAN and the power of Shopify, Stadium Goods now stands equipped to lead and grow in an ever-evolving market.</div>
+                    </div>
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Training prompt 4</div>
+                            <button class="copy-btn">Copy to Clipboard</button>
+                        </div>
+                        <div class="prompt-content">CASE STUDY EXAMPLE 4
+quip improves ways of working, increases speed and agility after replatforming to Shopify
+
+Founded in 2015, quip set out to revolutionize oral care with a simple mission: to make dental hygiene more accessible, effective, and stylish. Frustrated with overcomplicated, expensive toothbrushes and the lack of dental hygiene innovation, quip wanted to create a product that was both functional and beautifully designed.
+With a focus on minimalist, user-friendly design, quip introduced an affordable electric toothbrush paired with a subscription model that delivered brush heads and dental hygiene products directly to customers. 
+This approach simplified oral care for millions of customers, but ironically, quip soon faced similar frustrations with its custom-built ecommerce platform. Much like the bulky, inefficient toothbrushes they sought to replace, their homegrown solution became cumbersome, hard to scale, and a drain on resources. quip needed a platform that, like their product, was simple, reliable, and capable of growing with them—and that's when they turned to Avex to migrate them to Shopify.
+Since moving to Shopify, quip has seen major results:
+70% decrease in customer experience cases regarding refill plan management (via Recharge)
+45% decrease in customer experience cases regarding warranty (via Loop)
+The challenge: When a homegrown platform becomes a roadblock
+quip's custom-built ecommerce platform, while once an asset, quickly became a roadblock as the brand experienced rapid growth. The escalating demand for custom coding to support new features and product launches placed immense pressure on the tech team, which was continually engaged in a cycle of heavy development and technical maintenance.
+
+This relentless focus on upkeep left little room for innovation. Each new product update became a time-consuming task, requiring extensive development resources that delayed timelines and limited the brand's agility in the market. As a result, quip struggled to adapt to changing consumer demands and emerging trends, leading to missed opportunities for growth.
+
+Moreover, the challenges of scaling the platform negatively affected the overall customer experience. With sluggish updates and limited functionality, including search features, customers encountered frustrations that diminished their satisfaction and loyalty to the brand. 
+
+The solution: quip replatforms to Shopify for greater agility
+To tackle quip's challenges with scalability and operational efficiency, Avex used Shopify's robust capabilities as a high-performance platform designed specifically for high-growth brands. Shopify offered a comprehensive solution through its scalable infrastructure, robust APIs, and access to Shopify's expansive app ecosystem, providing the tools and integrations necessary to meet quip's growing demands.
+
+"Avex understood what we were trying to achieve and worked tirelessly to help us in our (incredibly rapid!) transition. It was clear that the company's expertise and connection with Shopify was remarkably strong, and we appreciated the leadership in guiding the process while also being flexible to suit our unique business needs."
+—Meredith Glansberg, Chief Revenue Officer, quip
+
+Migrate quickly, with data intact
+The migration was completed within four months, starting with a detailed discovery phase to assess quip's needs. The first priority was the data migration process, which involved precise mapping of products, customer profiles, and order histories. Avex ensured that no historical data was lost and that all customer accounts and orders remained accurate and operational post-migration.
+
+To meet the accelerated timeline, Avex also used one of its custom Shopify themes, which was modified to align with quip's brand guidelines. This allowed the team to streamline the development process while maintaining the brand's identity.
+
+Use subscriptions to encourage better health outcomes
+Subscription is not only a major revenue driver for quip, but is also critical to the company's health-focused mission: People should change their toothbrush every three months, but the majority don't. quip's subscription offering helps customers check one critical "to do" item off their list and contributes to better oral health outcomes. Avex and quip worked closely with Recharge to implement custom subscription logic. For instance, when customers purchase a toothbrush, they can subscribe exclusively to receive replacement brush heads, offering a more tailored experience and encouraging long-term retention.
+
+The ability for customers to more easily automate their customer service request needs and manage their subscriptions via Recharge has also reduced cases for the company by 70%, allowing for more focus on improving customer experience and loyalty.
+
+Quickly update content to capitalize on key moments
+One of the key advantages quip gained by migrating to Shopify was the ability to easily update content using the Shopify page builder, without relying on a tech team. Its drag-and-drop functionality empowers quip's marketing and content teams to make real-time updates to product pages, landing pages, and promotions without needing coding knowledge.
+
+Since moving to Shopify, quip has been able to capitalize on market trends and make page improvements at a fraction of the speed and with less resources than in the past. Quip launched their award-winning 360 Oscillating Toothbrush onto the new site and has been able to over-achieve sales expectations with Shopify's capabilities. 
+
+quip also launched their Gift Guide on the site in time for pre-Black Friday sales. This guide allowed shoppers to dive right into the idea of oral care gifting, driving conversion during the key holiday season for the brand.
+
+The results: Better ecommerce, made simple
+quip's replatform to Shopify through Avex has been transformative, directly addressing their operational challenges and setting a solid foundation for future growth. Customers have appreciated the significantly improved user experience and have responded to the self-service subscription options very positively. 
+
+"We have continued to get feedback on the enhanced user experience as a result of our migration to Shopify (and partnership with Recharge). Moving to a headed experience with Shopify via our Avex partnership is now allowing us to take advantage of this ecosystem and move more quickly and nimbly to continue to grow our business."
+—Meredith Glansberg, Chief Revenue Officer, quip
+
+Now, the brand is unlocking the full power of Shopify's capabilities and vast app ecosystem, enabling rapid and effective solutions tailored to their evolving needs. This newfound flexibility allows them to seamlessly integrate a variety of tools, such as Loop and Yotpo, to streamline operations, elevate customer interactions, and drive efficiency. After integrating Loop with their Shopify platform, quip was able to connect their warranty program more closely to the post-purchase experience, resulting in a 45% decrease in warranty cases.
+
+With this strategic shift to Shopify, quip is poised not only for immediate success but also for long-term growth in the competitive ecommerce landscape. The future looks bright!</div>
+                    </div>
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Training prompt 5</div>
+                            <button class="copy-btn">Copy to Clipboard</button>
+                        </div>
+                        <div class="prompt-content">CASE STUDY EXAMPLE 5
+Bambi Baby Reduces Checkout Times Across Retail Stores and Boosts Conversion Rates by 30%
+
+Since 1976, Bambi Baby has grown from a small family-owned department store into a leading specialty furniture retailer offering baby furniture, baby gear, car seats, and more. With five retail locations across New York, New Jersey, and Florida, plus a thriving ecommerce business, they've built their reputation on providing personalized service and expert guidance to new parents selecting all the essentials for their growing families.
+
+But as the business expanded, Bambi Baby's manual processes and disconnected commerce systems couldn't keep pace with customer expectations for fast, efficient service. Unifying their sales channels on Shopify helped them overcome these challenges. In the four months since replatforming, Bambi Baby has seen remarkable results, including: 
+
+30% growth in conversion rates online and offline
+30% growth in average order values (AOV)
+Reduced in-store checkout times from several minutes to seconds
+Increased repeat purchases and customer lifetime value (LTV) due to integrated loyalty rewards program across channels
+
+The Challenge: Improving inefficient and manual processes
+Before Shopify, Bambi Baby struggled to find technology solutions that could scale with their business. In their stores, they had tried Fishbowl POS and their online store ran on BigCommerce, but they needed a unified solution that could support their growing omnichannel operations. This led them to fall back on manual processes that were growing unsustainable. 
+
+Store associates, focused on helping customers select the right products, struggled to keep up with manual order entry, especially busy weekend hours. "We were doing pen and paper transactions using an Excel sheet, scanning them, and having back office enter orders," explains Josh Weiss, IT Director at Bambi Baby. "You'd come in on a Monday and have to enter 50 orders manually. It just became a process that was not sustainable."
+
+The paper-based checkout process also created bottlenecks. "You'd have four or five people backed up trying to buy something," says Josh. "People were just like, 'I'm out of here.'" 
+
+Inventory management was also an issue. Prior to Shopify, stores maintained minimal inventory and largely operated as showrooms. But this meant that when customers wanted to take products home same-day, they often had to drive 30 minutes to the warehouse, which was inconvenient and put unnecessary strain on warehouse operations.
+
+The brand's loyalty program faced challenges as well, with in-store purchases requiring manual point tracking and customer service intervention to ensure rewards were properly credited. These technical limitations weren't just creating inefficiencies—they were actively holding back growth and hurting Bambi Baby's customer experience, especially as they continued to expand their brick-and-mortar presence. That's when they decided to move to Shopify. 
+
+The Solution: A retail solution built for growth
+Working with design and development agency Syatt, Bambi Baby replatformed to Shopify in just three months, launching both their website and point of sale systems across all locations. "I've never had a project be on time before from development to deployment," says Josh. "There's so many moving pieces and I was stressed, but it happened. It went off without a hitch."
+
+Each store now operates multiple Shopify POS stations plus mobile devices, enabling staff to process transactions anywhere on the floor. "I can check four people out simultaneously and it takes minutes to do so," says Josh. Training new employees on the system takes just 35 minutes, and the intuitive interface allows staff to spend more time with customers. "Now I have time to be with people because the same 10 minutes I used to spend writing up orders, I can be upselling," explains Josh.
+
+Inventory and order management have been transformed as well. With Shopify's multiple location inventory capabilities and visibility across locations, Bambi Baby can confidently stock all their stores, enabling customers to take products home same-day. "The ability for customers to pay and leave with a box has been great for growth," says Josh. "Buying baby gear is exciting for parents. They want to buy their stroller and go home and set it up." A seamless integration with their SellerCloud ERP system is also a key improvement, enabling efficient order fulfillment whether items are being picked up in-store or shipped from the warehouse. "It helps me operate a well-oiled machine," says Josh.
+
+Shopify has also helped streamline the brand's loyalty program. The team uses Smile, a third-party app built for Shopify, to ensure rewards are instantly credited to Bambi Baby's customers regardless of where they shop. This efficiency extends to their promotional strategy too as the team can now manage discounts centrally and deploy them across both online and in-store channels instantly.
+
+"The fact that I can be sitting 30 miles away from our closest store and can update all the point of sale devices with a new coupon through Shopify saves a ton of time. When staff arrive they just see a new button on the POS screen. It's that easy."
+—Josh Weiss, IT Director, Bambi Baby
+
+The Results: From manual to modernized retail
+Shopify's impact was immediately apparent during Bambi Baby's annual car seat trade-up event, which draws hundreds of customers over two days. "In years past, because you couldn't check people out quickly enough, the volume in the store was claustrophobic with so many people waiting," explains Josh. "This year, with Shopify POS, we never felt overwhelmed because we could keep the line moving. We got 600 people through over the course of two days, and it worked exactly as we wanted with no hiccups."
+
+This improved efficiency has translated into significant business growth. "Our conversion rate is up by 30%," says Josh, as customers no longer abandon purchases due to long checkout lines. "Our average order value is up by 30% too. I think that's just the ability for my team to be able to upsell. We have the time to be with people because we're not spending those minutes writing up orders."
+
+The integrated loyalty program has transformed customer relationships, driving repeat purchases and increasing customer lifetime value. "We're seeing much less 'one and done' transactions. Now they're coming back for some of the smaller items because they know they're going to get to use those points," explains Josh.
+
+Looking ahead, Bambi Baby is positioned for continued retail expansion. "The growth that we've experienced over the last four months we would not have been able to accomplish without Shopify and Shopify point of sale," says Josh. With the ability to quickly set up new locations by simply shipping down iPads and card readers, they have minimal barriers to launching new stores while maintaining consistent operations across their growing retail footprint.
+
+"At the scale we're growing right now, I don't know how we would have done it without Shopify. Everything is managed from one place and it's so trainable—I can teach someone the POS system in 35 minutes. It doesn't slow us down anywhere. It's really instrumental in our growth."
+—Josh Weiss, IT Director, Bambi Baby</div>
+                    </div>
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Training prompt 6</div>
+                            <button class="copy-btn">Copy to Clipboard</button>
+                        </div>
+                        <div class="prompt-content">CASE STUDY EXAMPLE 6
+How Omy Laboratoires boosted sales with a redesigned online store
+
+Omy Laboratoires is a Canadian skincare brand founded in 2018 by Rachelle Séguin and Andrea Gomez. The brand offers fully customized face creams and serums made with 100% vegan ingredients. They're recognized as cosmetics industry innovators for their use of artificial intelligence (AI) to analyze customers' skin to provide personalized skincare solutions.
+
+When Omy decided to upgrade their Shopify theme to Online Store 2.0, the brand was looking to personalize the customer experience and increase front-end performance. They partnered with ecommerce specialist Novatize to complete the upgrade and improve the website's user experience. Since the upgrade, Omy has seen the following results:
+
+100% uptime since launch and zero major problems
+60% session increase year-over-year
+35% increase in repeat business year-over-year
+95% of sales made through ecommerce
+
+The challenge: Optimizing the online store and reducing data management complexity
+Omy was looking to upgrade their Shopify theme to Online Store 2.0, which would unlock faster loading times, dynamic page personalization, and an enhanced brand image. To achieve this, the Canadian skincare brand chose to partner with Novatize, a firm specialized in ecommerce.
+
+Redesigning Omy's product customizer was a major focus of the collaboration. This feature of the website allows customers to create personalized skincare products with ingredients that meet their specific needs. But because Omy had recently changed the nomenclature of their ingredients as part of upgrading their manufacturing process, textures, and fragrances, they had to adapt the methodology for entering information into the brand's product database. This required Novatize to custom build the product customiser on Shopify.
+
+Beyond redesigning the product customizer, Novatize also had to ensure the architecture of the new online store would be highly scalable yet simple enough for the Omy team to manage on their own.
+
+The solution: Optimizing the user experience without adding complexity
+Novatize and Omy worked closely together to design the new online store. The UX and UI design phases included a style guide to integrate all the brand's new assets, product sheets to provide complete transparency to consumers using metafields as product specs, the product customizer to meet the manufacturing processes of the brand, and user journeys focused on personalizing products to customers' unique needs.
+
+The Novatize team then overhauled Omy's database for customizable products, including migrating historical product and client data. Because this customization empowers each customer to order unique products, their new database is now able to handle specific use cases such as when customers want to reorder customized products, review personalized formulas previously registered to their accounts, or continue receiving product subscriptions.
+
+Novatize also ensured that Omy's nomenclature updates didn't impact the user experience on the website. The team crafted a dynamic attributes structure that now allows Omy to evolve their manufacturing process and product offering without compromising what customers see. By implementing a front-end logic tied to editable metafields, Omy now has autonomous capabilities to upgrade their customer experience so it stays aligned with their manufacturing process.
+
+"The Novatize team really cared about the success of the project, and the technological opportunities Shopify offers. They managed the project as if it were their own. They went beyond their mandate to ensure that the Omy team had everything in hand to deliver the project on time."
+—Edouard Garceau, Ecommerce Director, Omy Laboratoires
+
+Beyond creating a scalable yet accessible architecture, Omy was able to enhance their brand image. Novatize designed simpler website imagery that gave consumers a better understanding of ingredient customization. The new graphics and techniques help customers easily use the product customizer and place their orders while also facilitating internal operations for the Omy team. For example, the colored labels for each ingredient in the personalized creams help users understand the added value of the customizable product. And because the ingredients are highlighted, this redesign also enables production staff to flow more efficiently.
+
+On the site's front end, Novatize optimized key sections, such as the navigation menu and product sheets for both non-customized and customized products. These new sections have made the purchasing experience more fluid for customers, even if the products have complex characteristics. They also created a consistent site-wide experience, boosting credibility and aligning with the quality of Omy's products.
+
+The results: Rejuvenated website boosts online sales
+The launch of Omy's refreshed online store was a glowing success. Thanks to the preparation and close collaboration between Omy and Novatize, the launch was seamless. Since the redesign, Omy has seen an increase in sessions by 60%, with 95% of sales being made through their ecommerce platform. They've also celebrated a 35% increase in repeat business, alongside an increase in sales related to personalized products and 100% uptime since launch with zero major problems. Clearly, putting customer needs and preferences at the heart of the process paid off.</div>
+                    </div>
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Training prompt 7</div>
+                            <button class="copy-btn">Copy to Clipboard</button>
+                        </div>
+                        <div class="prompt-content">&lt;CASE STUDY TEMPLATE&gt;
+Next, I'll provide you with the template. It's important to use this alongside the examples as the guidelines for writing the new case study. Here is the template:
+
+FORMAT:
+- Create a compelling headline that includes the merchant name, key achievement with specific metrics, partner name, and Shopify
+- Keep the overall case study length to approximately 800-900 words total, but do not exceed 950
+- Strictly adhere to the word count ranges for each section
+- When given a large amount of information to work with, be highly selective with the information included and prioritize clarity and impact over comprehensiveness
+- Use no subsections within the main sections (Challenge, Solution, Results)
+- Include 1-2 strategic quotes in each section, integrated naturally into the narrative
+
+Title: Create a compelling title that emphasizes transformation (e.g., "How [Partner Agency] helped [Merchant] achieve [Key Result] with Shopify")
+
+Introduction (150-175 words): Establish brand identity and values, explain their challenge, introduce the partnership, and end with bulleted results
+- Brief merchant background and business context
+- Clear statement of challenges faced
+- Concise overview of why they chose this partner
+- End with bullet points of key quantitative results: "Since partnering with [Agency] and implementing Shopify, [Merchant] has:
+  - [Specific metric with percentage/number]
+  - [Specific metric with percentage/number]
+  - [Specific metric with percentage/number]
+
+Challenge (175-200 words): Detail specific business problems with contextual details about impact on customers and operations
+- Opening paragraph establishing the merchant's situation and how technical limitations affect brand experience
+- 2-3 specific challenge paragraphs with descriptive details
+- Each challenge should include a direct quote from the partner or merchant
+- Connect challenges to business impact, customer experience, and goals
+
+Solution (250-275 words): Explain the strategic approach and key platform capabilities, focusing on unique aspects of the implementation and how technical features deliver business value
+- Detail the collaborative approach between partner and merchant
+- Highlight specific Shopify capabilities the partner used
+- Connect each technical feature to a specific business benefit or customer experience improvement
+- Explain custom development and integrations implemented
+- Include direct quotes about the partnership experience
+
+Results (175-200 words): Connect metrics directly to business objectives and end with forward-looking statement about future growth
+- Summarize both qualitative and quantitative results
+- Focus on business growth metrics
+- Include detailed metrics for each result area
+- Connect metrics to strategic business value
+- Include direct quotes about impact
+&lt;STYLE GUIDELINES&gt;
+Here are some style guidelines to consider alongside the examples:
+Style Guidelines:
+- Refer to the merchant as the "brand," "business," or "organization" (not "merchant")
+- Write in a journalistic, narrative style that tells a compelling story
+- Connect the brand's identity and values to their digital transformation journey
+- Use vivid, descriptive language while maintaining professionalism
+- Keep paragraphs short (3-4 sentences maximum)
+- Avoid jargon and overly technical language
+- Use direct quotes strategically to add credibility and personality
+- Integrate quotes naturally within paragraphs rather than as standalone elements
+- Balance business context with technical details, emphasizing how technology supports business goals
+- Write in third-person except for direct quotes
+- Avoid overused terms like "leverage" (use "use," "employ," or "implement" instead)
+- Include descriptive section headers that relate to the business or industry
+- Vary sentence structures and avoid repetitive patterns like "It's not only X, but also Y"
+- Be specific and concrete instead of using generic statements
+- Never fabricate quotes if none are provided; instead use: [QUOTE NEEDED: Brief description of quote topic]
+- Never invent statistics; use this placeholder instead: [STAT NEEDED: Description of the metric type]
+- When information is insufficient, mark gaps with: [MORE INFORMATION NEEDED: Description of missing details]
+- Use industry-appropriate terminology without becoming overly technical
+- Craft section headers that specifically relate to the merchant's industry and unique situation
+- Maintain balance between technical details and business impacts
+- Use active voice when describing achievements
+- Ensure each section logically builds upon the previous one
+
+Now that you have the context, I'm going to give you information about a new partner and merchant that we'd like to write a case study about. Add the relevant information throughout the case study as you see fit to match the voice, tone, style, and formatting of the examples. Do not include any information from the examples in this draft, and do not pull anything from the web. Also do not edit the provided quotes, and instead use them directly.
+
+Once you're ready, say "My training is now complete! I'm ready to help you draft a new case study. Remember: The more specific information you share, the better the draft will be!"
+
+You can input that information now."</div>
+                    </div>
+
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" onclick="goToStep('step1')">Back</button>
+                    <button class="btn btn-primary" onclick="goToStep('step3')">Next: Step 3</button>
+                </div>
+            </section>
+
+            <!-- Step 3: Choose Your Adventure -->
+            <section class="step-content" id="step3">
+                <h2>Step 3: Choose your own adventure</h2>
+                <div class="content-area">
+                    <p><strong>The information I have about the merchant lives:</strong></p>
+                    
+                    <div class="path-selection adventure-grid">
+                        <button class="path-btn" onclick="selectAdventureAndProceed('step4a')">
+                            <h3>📝 In my head</h3>
+                            <p>I'll use a worksheet to organize my thoughts</p>
+                        </button>
+                        <button class="path-btn" onclick="selectAdventureAndProceed('step4b')">
+                            <h3>🎤 In an interview with the merchant</h3>
+                            <p>I'll have a direct conversation with the merchant</p>
+                        </button>
+                        <button class="path-btn" onclick="selectAdventureAndProceed('step4c')">
+                            <h3>♻️ In an existing case study on my own site</h3>
+                            <p>I'd like to repurpose existing content</p>
+                        </button>
+                        <button class="path-btn" onclick="selectAdventureAndProceed('step4c')">
+                            <h3>📄 In an existing draft</h3>
+                            <p>I have a draft that needs revision</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" onclick="goToPreviousStep()">Back</button>
+                </div>
+            </section>
+
+            <!-- Step 4A-4C sections -->
+            <section class="step-content" id="step4a">
+                <h2>Step 4: Draft the case study</h2>
+                <h3>Use a short worksheet</h3>
+                <div class="content-area">
+                    <p>If you know the work you did with your merchant by heart and want to write it down as the input for the case study, start by filling out this short worksheet.</p>
+
+
+                    <div class="info-box danger">
+                        <h4>⚠️ Important: No auto-save</h4>
+                        <p style="font-size: 0.85rem;"><strong>Your work in this worksheet is NOT automatically saved.</strong> If you navigate away from this page or refresh your browser, you will lose all your progress. We recommend completing the entire worksheet in one session or copying your work to a separate document as you go.</p>
+                    </div>
+
+                    <!-- Interactive Worksheet -->
+                    <div class="worksheet-container">
+                        <form id="worksheetForm">
+                            <div class="question-group">
+                                <label for="overall-story">What is the overall story you'd like to tell?</label>
+                                <small>Explain in 2-3 sentences.</small>
+                                <textarea id="overall-story" name="overall-story" rows="3" placeholder="Describe the transformation story you want to highlight..."></textarea>
+                            </div>
+
+                            <div class="question-group">
+                                <label for="describe-merchant">Describe the merchant.</label>
+                                <small>What products or services do they provide and what do they care about?</small>
+                                <textarea id="describe-merchant" name="describe-merchant" rows="4" placeholder="Tell us about their business, products/services, mission, values..."></textarea>
+                            </div>
+
+                            <div class="question-group">
+                                <label for="describe-partner">Describe yourself as the partner.</label>
+                                <small>What services do you provide and why did this brand choose to work with you as their partner?</small>
+                                <textarea id="describe-partner" name="describe-partner" rows="4" placeholder="Explain your services, expertise, and why they selected you..."></textarea>
+                            </div>
+
+                            <div class="question-group">
+                                <label for="merchant-challenges">Describe the merchant's challenges on their previous tech stack.</label>
+                                <small>Why did they choose Shopify?</small>
+                                <textarea id="merchant-challenges" name="merchant-challenges" rows="4" placeholder="Detail their previous platform limitations, pain points, and motivation to change..."></textarea>
+                            </div>
+
+                            <div class="question-group">
+                                <label for="challenges-quote">Provide a direct quote from the merchant about the challenges they've faced.</label>
+                                <textarea id="challenges-quote" name="challenges-quote" rows="3" placeholder="Include the exact quote with quotation marks and attribution..."></textarea>
+                            </div>
+
+                            <div class="question-group">
+                                <label for="shopify-value">Describe the value of moving to Shopify.</label>
+                                <small>What features or capabilities did the merchant gain in moving to Shopify? How did you help them implement these features? What are they now able to achieve that they previously couldn't?</small>
+                                <textarea id="shopify-value" name="shopify-value" rows="5" placeholder="Detail the specific capabilities, implementation process, and new possibilities..."></textarea>
+                            </div>
+
+                            <div class="question-group">
+                                <label for="solution-quote">Provide a direct quote about the solution approach or implementation from either the merchant or yourself as the partner.</label>
+                                <textarea id="solution-quote" name="solution-quote" rows="3" placeholder="Include the exact quote with quotation marks and attribution..."></textarea>
+                            </div>
+
+                            <div class="question-group">
+                                <label for="results">Describe the results of moving to Shopify.</label>
+                                <small>What were the main outcomes of moving to Shopify?</small>
+                                <textarea id="results" name="results" rows="4" placeholder="Detail the business outcomes, performance improvements, growth metrics..."></textarea>
+                            </div>
+
+                            <div class="question-group">
+                                <label for="partnership-outcomes">Describe the outcomes of your partnership.</label>
+                                <small>What aspect of your partnership do the merchant valued the most? What future plans do you have with this merchant to continue their growth?</small>
+                                <textarea id="partnership-outcomes" name="partnership-outcomes" rows="4" placeholder="Highlight the key benefits and value your partnership provided, and describe any future plans..."></textarea>
+                            </div>
+
+
+                            <div class="question-group">
+                                <label for="results-quote">Provide a direct quote from the merchant about results and business impact.</label>
+                                <textarea id="results-quote" name="results-quote" rows="3" placeholder="Include the exact quote with quotation marks and attribution..."></textarea>
+                            </div>
+
+                            <div class="question-group">
+                                <label for="success-metrics">Please share 1-3 quantifiable success metrics related to the impacts you described above that we can include in the case study.</label>
+                                <small>Examples: 45% faster launch for new features, 3x increase in conversion rate, 15% increase in average order value</small>
+                                <textarea id="success-metrics" name="success-metrics" rows="4" placeholder="List specific metrics with percentages, timeframes, or concrete numbers..."></textarea>
+                            </div>
+
+                            <div class="worksheet-actions">
+                                <button type="button" class="btn btn-primary" onclick="generateWorksheetOutput()">Generate AI input</button>
+                                <button type="button" class="btn btn-secondary" onclick="clearWorksheet()">Clear all</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Generated Output -->
+                    <div id="worksheetOutput" class="prompt-box" style="display: none; margin-top: 2rem;">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Your worksheet formatted as an AI input</div>
+                            <button class="copy-btn" onclick="copyWorksheetOutput()">Copy to clipboard</button>
+                        </div>
+                        <div class="prompt-content" id="worksheetOutputContent"></div>
+                    </div>
+
+
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" onclick="goToStep('step3')">Back</button>
+                    <button class="btn btn-primary" onclick="goToStep('step5')">Next: Step 5</button>
+                </div>
+            </section>
+
+            <section class="step-content" id="step4b">
+                <h2>Step 4: Draft the case study</h2>
+                <h3>Interview the merchant</h3>
+                <div class="content-area">
+                    <p>Conducting an interview with a merchant is the best way to gather information, uncover insights, and add a bit of humanity to your case study.</p>
+
+
+                    <div style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 2rem; margin: 1.5rem 0;">
+                        <div class="prompt-title">Step 1: Draft questions and interview your merchant</div>
+                        <p style="margin: 1rem 0; font-size: 0.9rem; font-style: italic; color: #666;">🔴 Remember to record your interview!</p>
+                        <a href="https://content.shopify.com/i/Id7lDIbYsjtHKter3tOCeXyND1suM1H7alZrBbKZZ0UNfu1av0vuDWwum8t8GiCG6BEITwPLUSSIGNO6hVj0IBBJo4Pvz1bNns0H0ToICLnOWkfHaBzkx___Gd0DW2xSAQqIXPaSc" target="_blank" style="display: inline-block; background-color: #4CAF50; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-top: 1rem;">
+                            📄 Download interview question template
+                        </a>
+                    </div>
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Step 2: Input this additional training prompt</div>
+                            <button class="copy-btn">Copy to clipboard</button>
+                        </div>
+                        <div class="prompt-content">I'm now going to give you information about a new partner that we'd like to write a case study about. I'll provide a transcript as an overview. I'll also give you an overview of the story we'd like to capture. As you pull quotes from the transcript, quote them directly. When you understand this, say, "I'm ready for the transcript!"</div>
+                    </div>
+
+                    <div style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 2rem; margin: 1.5rem 0;">
+                        <div class="prompt-title">Step 3: Input the interview transcript into your AI tool</div>
+                    </div>
+
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" onclick="goToStep('step3')">Back</button>
+                    <button class="btn btn-primary" onclick="goToStep('step5')">Next: Step 5</button>
+                </div>
+            </section>
+
+            <section class="step-content" id="step4c">
+                <h2>Step 4: Draft the case study</h2>
+                <h3>Repurpose an existing case study from your own website or an existing draft</h3>
+                <div class="content-area">
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Action 1: Input this additional training prompt</div>
+                            <button class="copy-btn">Copy to clipboard</button>
+                        </div>
+                        <div class="prompt-content">The informational inputs I'm going to provide next may look like they're in the form of a case study. Ignore this formatting, structure, voice, and tone, and instead follow the examples and template I provided earlier. Simply use the information from the upcoming input as raw material for your draft.
+
+When you understand this, say, "I'm ready to help repurpose your existing case study draft!"</div>
+                    </div>
+
+                    <div style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 2rem; margin: 1.5rem 0;">
+                        <div class="prompt-title">Action 2: Copy and paste your existing content into your AI tool</div>
+                    </div>
+
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" onclick="goToPreviousStep()">Back</button>
+                    <button class="btn btn-primary" onclick="goToStep('step5')">Next: Step 5</button>
+                </div>
+            </section>
+
+            <!-- Step 5: Check Details -->
+            <section class="step-content" id="step5">
+                <h2>Step 5: Check for the details</h2>
+                <div class="content-area">
+                    <p>You've generated a draft! Now let's make sure it has all of the elements that make for a great Shopify case study.</p>
+
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <div class="prompt-title">Action 1: Input this quality assessment prompt</div>
+                            <button class="copy-btn">Copy to Clipboard</button>
+                        </div>
+                        <div class="prompt-content">You are now an editor with expertise in Shopify's platform capabilities and partner program. Your task is to thoroughly review the drafted case study for detailed information about how this partner worked with the merchant to grow their business on Shopify. Often, these case studies come to you with missing information, and it's your job to identify where more information is needed.
+
+Please evaluate the case study draft you just generated against the following criteria and flag any issues:
+
+1. THE INTRO
+Verify that the introduction contains information about the merchant including:
+The products or services they provide
+What they care about as a brand
+When they were founded
+A clear statement of challenges they faced
+Why they chose to work with the partner
+Three clear metrics that each contain a number
+
+2. THE CHALLENGE
+Verify that the section with "The challenge:" in the header contains information on:
+A clear description of the challenges the merchant faced before they migrated to Shopify
+Why each challenge was important to solve
+A direct quote from the partner or merchant that relates to the challenges
+Why they chose Shopify to address these challenges
+
+3. THE SOLUTION
+Verify that the section with "The solution:" contains information on:
+The features or capabilities the merchant gained in moving to Shopify
+How the partner helped implement these features
+What these features allow the merchant to achieve that they previously couldn't
+A direct quote about solution approach or implementation from the merchant or the partner
+
+4. THE RESULTS
+Verify that the section with "The results:" contains information on:
+A description of the main outcomes of moving to Shopify
+A description of my the merchant values the partner
+A description of future plans the merchant and partner have to continue their growth
+A direct quote from the merchant about results and business impact
+
+OUTPUT FORMAT
+For each section of the verification checklist, provide your assessment in this format:
+[Section Name]: ✓ (Looks good!) or ❌ (more detail needed)
+Output the text associated with the bullet in each section. For example, if "The challenge" section needs more information on why each challenge was important to solve, output: "❌ (more detail needed): Why each challenge was important to solve"
+Reference specific text from the case study to point to where more detail is needed
+If no issues are found in a section, simply mark it as complete.
+
+At the end, provide an overall assessment:
+ALL CLEAR: Case study has a satisfactory level of detail and includes all required story elements.
+NEEDS REVISION: Case study is lacking detail in some areas that should be addressed.
+SIGNIFICANT ISSUES: Case study lacks required components (metrics and/or quotes) and needs substantial revision.
+Include a summary of the areas with most information missing if any are found.
+
+If the overall assessment is either NEEDS REVISION or SIGNIFICANT ISSUES, also say: "Above are some areas where we suggest adding more information. Following the recommendations listed in the overall assessment, provide this additional information (as either bullets or sentences) to update the draft.
+
+You can free-type the responses to these required improvement areas. The AI tool will give feedback on what information feels satisfactory and where you still need to provide more details."
+
+Once they have provided all the necessary additional information, draft a revised case study that incorporates these new inputs.</div>
+                    </div>
+
+                    <div class="info-box success" style="background: #e8f5e8; border: 1px solid #c8e6c9; color: #2e7d32;">
+                        <h4 style="color: #2e7d32;">📝 Updating your draft</h4>
+                        <p>Once you've run this prompt, you may see some areas where we suggest adding more information. Your AI tool will identify areas where you need to add more information. Follow its guidance until it feels the information is satisfactory and it prompts a new draft. You may have to go through this cycle a few times!</p>
+                        <p style="font-weight: bold; font-size: 1.1rem; margin-top: 1rem; padding: 0.5rem; background: #c8e6c9; border-radius: 4px; text-align: center;">✅ Once you receive an "All clear!" from the quality assessment, you can move to the last step.</p>
+                    </div>
+
+
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" onclick="goToPreviousStep()">Back</button>
+                    <button class="btn btn-primary" onclick="goToStep('step6')">Next: Step 6</button>
+                </div>
+            </section>
+
+            <!-- Step 6: Edit Draft -->
+            <section class="step-content" id="step6">
+                <h2>Step 6: Edit your draft (as a human)</h2>
+                <div class="content-area">
+                    <p>The purpose of editing your draft is twofold: to check for accuracy and to make it the best it can be. So, please:</p>
+
+                    <ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 1rem;"><strong>Check (and double check!) the accuracy of the outputs.</strong> AI is a great tool, but it has a tendency to hallucinate, especially when it's not given enough information.</li>
+                        <li style="margin-bottom: 1rem;"><strong>Put your human abilities to work.</strong> While the outputs of these prompts act as a strong starting point, they're not perfect. Still put a dedicated effort into revising and shaping your case study into a story you feel proud of. We'll all benefit from it!</li>
+                    </ul>
+
+                    <h4 style="color: #2c3e50; margin: 1.5rem 0 0.5rem 0;">Share required images</h4>
+                    <p style="margin: 0.5rem 0 1.5rem 0; font-size: 0.9rem;">Include a Google Drive link to these images in your submission.</p>
+
+                    <!-- Image Requirements with Dropdowns -->
+                    <div style="margin: 1rem 0;">
+                        <div class="image-requirement" style="margin-bottom: 0.5rem;">
+                            <div onclick="toggleImageSpecs('merchant-logo')" style="background: #f8f9fa; padding: 0.75rem; border-radius: 6px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border: 1px solid #e9ecef;">
+                                <span style="font-weight: 600;">Merchant logo image</span>
+                                <span id="merchantLogoCaret" style="font-size: 1.2rem;">▶</span>
+                            </div>
+                            <div id="merchantLogoSpecs" style="padding: 1rem; background: white; border: 1px solid #e9ecef; border-top: none; border-radius: 0 0 6px 6px; font-size: 0.9rem; display: none;">
+                                200×60px SVG, with balanced horizontal and vertical margins (original SVG preferred vs. converted from jpg/png)
+                            </div>
+                        </div>
+
+                        <div class="image-requirement" style="margin-bottom: 0.5rem;">
+                            <div onclick="toggleImageSpecs('partner-logo')" style="background: #f8f9fa; padding: 0.75rem; border-radius: 6px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border: 1px solid #e9ecef;">
+                                <span style="font-weight: 600;">Partner logo image</span>
+                                <span id="partnerLogoCaret" style="font-size: 1.2rem;">▶</span>
+                            </div>
+                            <div id="partnerLogoSpecs" style="padding: 1rem; background: white; border: 1px solid #e9ecef; border-top: none; border-radius: 0 0 6px 6px; font-size: 0.9rem; display: none;">
+                                200×60px SVG, with balanced horizontal and vertical margins (original SVG preferred vs. converted from jpg/png)
+                            </div>
+                        </div>
+
+                        <div class="image-requirement" style="margin-bottom: 0.5rem;">
+                            <div onclick="toggleImageSpecs('hero-image')" style="background: #f8f9fa; padding: 0.75rem; border-radius: 6px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border: 1px solid #e9ecef;">
+                                <span style="font-weight: 600;">Merchant hero image</span>
+                                <span id="heroImageCaret" style="font-size: 1.2rem;">▶</span>
+                            </div>
+                            <div id="heroImageSpecs" style="padding: 1rem; background: white; border: 1px solid #e9ecef; border-top: none; border-radius: 0 0 6px 6px; font-size: 0.9rem; display: none;">
+                                This image will appear as the header at the top of the case study. Choose a horizontal layout image that doesn't feature text or other words and illustrates the brand through an appropriate product, collection, or lifestyle photography. Sizing: 2056×1157 px minimum.
+                            </div>
+                        </div>
+
+                        <div class="image-requirement" style="margin-bottom: 0.5rem;">
+                            <div onclick="toggleImageSpecs('card-image')" style="background: #f8f9fa; padding: 0.75rem; border-radius: 6px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border: 1px solid #e9ecef;">
+                                <span style="font-weight: 600;">Merchant card image</span>
+                                <span id="cardImageCaret" style="font-size: 1.2rem;">▶</span>
+                            </div>
+                            <div id="cardImageSpecs" style="padding: 1rem; background: white; border: 1px solid #e9ecef; border-top: none; border-radius: 0 0 6px 6px; font-size: 0.9rem; display: none;">
+                                This image will appear on the content card within the <a href="#" style="color: #4CAF50;">Shopify case study gallery</a>.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box success" style="background: #e8f5e8; border: 1px solid #c8e6c9; color: #2e7d32; padding: 1.5rem; border-radius: 8px; margin: 2rem 0; text-align: center;">
+                        <p style="margin: 0 0 1rem 0;">When you're feeling confident in your draft, submit it to Shopify for review.</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfDmdh-6FWGJql2Y2N0U1E7b1HbxBxKpsyOlbkz3S_0wIfTmQ/viewform" target="_blank" class="btn btn-primary" style="background-color: #4CAF50; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 1rem; border: none; display: inline-block;">Submit</a>
+                    </div>
+
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" onclick="goToStep('step5')">Back</button>
+                    <button class="btn btn-success" onclick="showCompletion()">Journey complete!</button>
+                </div>
+            </section>
+
+            <!-- Completion -->
+            <section class="step-content" id="completion">
+                <h2>🎉 Congratulations!</h2>
+                <div class="content-area">
+                    <p>You've successfully created a case study for Shopify using AI!</p>
+                    <p>A Shopify content team member will reach out shortly with next steps.</p>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-primary" onclick="goToStep('intro')">Start over</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Sliding Sidebar for Step 2B -->
+    <div class="sliding-sidebar" id="freeAccountSidebar" onclick="toggleSlidingSidebar()" style="position: fixed; top: 50%; right: 0px; transform: translateY(-50%); width: 300px; background: #e8f5e8; border: 1px solid #c8e6c9; border-radius: 8px 0 0 8px; padding: 1.5rem; box-shadow: -4px 0 12px rgba(0,0,0,0.1); transition: right 0.4s ease; z-index: 1000; cursor: pointer;">
+        <div style="position: absolute; top: 10px; left: 15px; color: #2e7d32; font-size: 1.2rem;" id="freeAccountToggle">▶</div>
+        <div class="sidebar-content">
+            <p style="color: #2e7d32; font-size: 0.9rem; line-height: 1.4; margin-left: 30px;">Without a pro version of ChatGPT or Claude, you'll need to manually train the model. This is straightforward, though it takes a few steps.</p>
+        </div>
+    </div>
+
+    <!-- Sliding Sidebar for Step 3 -->
+    <div class="sliding-sidebar" id="step3Sidebar" onclick="toggleStep3Sidebar()" style="position: fixed; top: 50%; right: 0px; transform: translateY(-50%); width: 300px; background: #e8f5e8; border: 1px solid #c8e6c9; border-radius: 8px 0 0 8px; padding: 1.5rem; box-shadow: -4px 0 12px rgba(0,0,0,0.1); transition: right 0.4s ease; z-index: 1000; cursor: pointer;">
+        <div style="position: absolute; top: 10px; left: 15px; color: #2e7d32; font-size: 1.2rem;" id="step3Toggle">▶</div>
+        <div class="sidebar-content">
+            <p style="color: #2e7d32; font-size: 0.9rem; line-height: 1.4; margin-left: 30px;">Now it's time to input the new information about the merchant you want to write a case study about.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
