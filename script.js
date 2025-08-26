@@ -11,7 +11,7 @@ let userPath = {
 };
 
 // Step order for progress calculation
-const mainSteps = ['intro', 'step1', 'step2', 'step3', 'step4', 'step5', 'step6'];
+const mainSteps = ['intro', 'step1', 'step2', 'step3', 'step4', 'step5', 'step6', 'step7'];
 const stepMappings = {
     'step2a': 'step2',
     'step2b': 'step2',
@@ -45,6 +45,11 @@ function checkStepUnlocking() {
     // Step 6 unlocks after visiting step 5
     if (completedSteps.has('step5') || currentStep === 'step5') {
         unlockedSteps.add('step6');
+    }
+    
+    // Step 7 unlocks after visiting step 6
+    if (completedSteps.has('step6') || currentStep === 'step6') {
+        unlockedSteps.add('step7');
     }
 }
 
@@ -98,13 +103,16 @@ function showStepLockedMessage(stepId) {
             message = 'Please choose your path in Step 2 to unlock Step 3.';
             break;
         case 'step4':
-            message = 'Please choose your adventure in Step 3 to unlock Step 4.';
+            message = 'Please choose your information format in Step 3 to unlock Step 4.';
             break;
         case 'step5':
-            message = 'Please draft your case study in Step 4 to unlock Step 5.';
+            message = 'Please share the information in Step 4 to unlock Step 5.';
             break;
         case 'step6':
             message = 'Please complete Step 5 to unlock Step 6.';
+            break;
+        case 'step7':
+            message = 'Please complete Step 6 to unlock Step 7.';
             break;
         default:
             message = 'Please complete the previous steps to unlock this step.';
@@ -219,7 +227,8 @@ function goToPreviousStep() {
         'step4b': 'step3',  // All step 4 variants go back to step 3
         'step4c': 'step3',  // All step 4 variants go back to step 3
         'step5': userPath.step4 || 'step4',
-        'step6': 'step5'
+        'step6': 'step5',
+        'step7': 'step6'
     };
     
     previousStep = stepMap[currentStep] || 'intro';
@@ -567,23 +576,7 @@ function clearWorksheet() {
     }
 }
 
-// Toggle sliding sidebar function
-function toggleSlidingSidebar() {
-    const sidebar = document.getElementById('freeAccountSidebar');
-    const toggleArrow = document.getElementById('freeAccountToggle');
-    
-    if (sidebar.style.right === '0px' || sidebar.style.right === '') {
-        // Slide out (collapse) - leave arrow tab visible
-        sidebar.style.right = '-270px';
-        toggleArrow.textContent = '◀';
-        toggleArrow.style.transform = 'rotate(0deg)';
-    } else {
-        // Slide in (expand)
-        sidebar.style.right = '0px';
-        toggleArrow.textContent = '▶';
-        toggleArrow.style.transform = 'rotate(0deg)';
-    }
-}
+
 
 // Toggle Step 3 sidebar function
 function toggleStep3Sidebar() {
@@ -605,20 +598,8 @@ function toggleStep3Sidebar() {
 
 // Show/hide sidebar based on current step
 function updateSidebarVisibility() {
-    const sidebar = document.getElementById('freeAccountSidebar');
-    const toggleArrow = document.getElementById('freeAccountToggle');
     const step3Sidebar = document.getElementById('step3Sidebar');
     const step3ToggleArrow = document.getElementById('step3Toggle');
-    
-    // Step 2B sidebar
-    if (currentStep === 'step2b') {
-        sidebar.style.display = 'block';
-        // Initialize in extended position
-        sidebar.style.right = '0px';
-        if (toggleArrow) toggleArrow.textContent = '▶';
-    } else {
-        sidebar.style.display = 'none';
-    }
     
     // Step 3 sidebar
     if (currentStep === 'step3') {
@@ -738,7 +719,6 @@ window.selectAdventureAndProceed = selectAdventureAndProceed;
 window.generateWorksheetOutput = generateWorksheetOutput;
 window.copyWorksheetOutput = copyWorksheetOutput;
 window.clearWorksheet = clearWorksheet;
-window.toggleSlidingSidebar = toggleSlidingSidebar;
 window.toggleStep3Sidebar = toggleStep3Sidebar;
 window.toggleInterviewSection = toggleInterviewSection;
 window.downloadInterviewQuestions = downloadInterviewQuestions;
