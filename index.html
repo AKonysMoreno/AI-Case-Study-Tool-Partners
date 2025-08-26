@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI case study tool for Shopify partners</title>
+    <title>Write a case study using AI</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>AI case study tool for Shopify partners</h1>
+            <div class="eyebrow-text">A tool for Shopify partners</div>
+            <h1>Write a case study using AI</h1>
         </header>
 
         <nav class="step-progress-nav">
@@ -24,19 +25,19 @@
                     </div>
                     <div class="step-marker" data-step="step1">
                         <div class="step-dot"></div>
-                        <div class="step-label">Step 1: Select your AI tool</div>
+                        <div class="step-label">Step 1: Which AI tool are you using?</div>
                     </div>
                     <div class="step-marker" data-step="step2">
                         <div class="step-dot"></div>
-                        <div class="step-label">Step 2: Train your model</div>
+                        <div class="step-label">Step 2: Set up your AI tool</div>
                     </div>
                     <div class="step-marker" data-step="step3">
                         <div class="step-dot"></div>
-                        <div class="step-label">Step 3: Choose your adventure</div>
+                        <div class="step-label">Step 3: Choose your information format</div>
                     </div>
                     <div class="step-marker" data-step="step4">
                         <div class="step-dot"></div>
-                        <div class="step-label">Step 4: Draft the case study</div>
+                        <div class="step-label">Step 4: Share the information</div>
                     </div>
                     <div class="step-marker" data-step="step5">
                         <div class="step-dot"></div>
@@ -44,7 +45,11 @@
                     </div>
                     <div class="step-marker" data-step="step6">
                         <div class="step-dot"></div>
-                        <div class="step-label">Step 6: Edit your draft</div>
+                        <div class="step-label">Step 6: Review your draft</div>
+                    </div>
+                    <div class="step-marker" data-step="step7">
+                        <div class="step-dot"></div>
+                        <div class="step-label">Step 7: Submit your draft</div>
                     </div>
                 </div>
             </div>
@@ -53,15 +58,16 @@
         <main class="content">
             <!-- Intro Section -->
             <section class="step-content active" id="intro">
-                <h2>Write a case study</h2>
+                <h2>How to get started</h2>
+                <p class="intro-copy">Use the step-by-step instructions within this tool to create a compelling case study. We've provided the prompts to train a generative AI tool of your choosing. You'll share information about your agency, the merchant you worked with, and the results—then use the prompts to turn the details into a comprehensive draft.</p>
                 <div class="content-area">
 
-                    <h3>Ground rules</h3>
+                    <h3>Helpful guidelines</h3>
                     <ul>
-                        <li><strong>These prompts were curated for use with ChatGPT or Claude.</strong> For the best results, we recommend you use one of these AI tools.</li>
-                        <li><strong>Better inputs make for better outputs.</strong> The more detail you feed into the model, the more useful and informative the case study will be. Lean on being overly detailed and descriptive. Don't skip any requested inputs.</li>
+                        <li><strong>Work with either ChatGPT or Claude.</strong> We tested the prompts provided in each step with these AI tools. For the best results, we recommend you use one of them.</li>
+                        <li><strong>Better inputs make for better outputs.</strong> The more detail you feed into your AI tool, the more useful and informative the case study will be. Lean on being overly detailed and descriptive. Don't skip any requested inputs.</li>
                         <li><strong>Check (and double check!) the accuracy of the outputs.</strong> AI is a great tool, but it has a tendency to hallucinate, especially when it's not given enough information.</li>
-                        <li><strong>Put your human abilities to work.</strong> While the outputs of these prompts act as a strong starting point, they're not perfect. Still put a dedicated effort into revising and shaping your case study. We'll all benefit from it!</li>
+                        <li><strong>Put your human abilities to work.</strong> While the outputs of these prompts act as a strong starting point, they're not perfect. Still put a dedicated effort into reviewing your case study.</li>
                     </ul>
 
                 </div>
@@ -72,17 +78,18 @@
 
             <!-- Step 1: Select AI Tool -->
             <section class="step-content" id="step1">
-                <h2>Step 1: What is your AI tool?</h2>
+                <div class="eyebrow-text">Step 1</div>
+                <h2>Which AI tool are you using?</h2>
                 <div class="content-area">
                     
                     <div class="path-selection">
                         <button class="path-btn" onclick="selectToolAndProceed('pro')" style="position: relative;">
-                            <h3>✨ Pro AI tooling account</h3>
+                            <h3>✨ I'm using a Pro AI tool</h3>
                             <p>ChatGPT Pro or Claude Pro</p>
                                 <div style="position: absolute; top: 10px; right: 10px; background-color: #28a745; color: white; padding: 4px 12px; border-radius: 12px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); z-index: 10;">Recommended</div>
                         </button>
                         <button class="path-btn" onclick="selectToolAndProceed('free')">
-                            <h3>🆓 Free AI tooling account</h3>
+                            <h3>🆓 I'm using a Free AI tool</h3>
                             <p>GPT-3.5 or Claude.ai</p>
                         </button>
                     </div>
@@ -93,9 +100,10 @@
                 </div>
             </section>
 
-            <!-- Step 2: Train your model -->
+            <!-- Step 2: Set up your AI tool -->
             <section class="step-content" id="step2">
-                <h2>Step 2: Train your model</h2>
+                <div class="eyebrow-text">Step 2</div>
+                <h2>Set up your AI tool</h2>
                 <div class="content-area">
                     <p>Choose your training path:</p>
                     <div class="path-selection">
@@ -116,10 +124,11 @@
 
             <!-- Step 2A: Pro Account -->
             <section class="step-content" id="step2a">
-                <h2>Step 2: Train your model</h2>
+                <div class="eyebrow-text">Step 2</div>
+                <h2>Set up your AI tool</h2>
                 <h3>With a pro account</h3>
                 <div class="content-area">
-                    <p>We recommend using the Pro version of either ChatGPT or Claude for the best draft output. To get started, you'll complete two actions below.</p>
+                    <p>To train your AI tool to write case studies, you'll complete the two actions below.</p>
 
 
                     <div class="prompt-box">
@@ -165,16 +174,17 @@ You can input that information now."</div>
 
             <!-- Step 2B: Free Account -->
             <section class="step-content" id="step2b">
-                <h2>Step 2: Train your model</h2>
+                <div class="eyebrow-text">Step 2</div>
+                <h2>Set up your AI tool</h2>
                 <h3>With a free account</h3>
                 <div class="content-area">
-                    <p>Copy and paste each training prompt into your tool, pressing ENTER after each prompt.</p>
+                    <p>Without a pro version of ChatGPT or Claude, you'll need to manually train the model. This is straightforward, though it takes a few steps. Copy and paste each training prompt into your tool, pressing <strong>enter</strong> after each prompt.</p>
                     
 
 
                     <div class="prompt-box">
                         <div class="prompt-header">
-                            <div class="prompt-title">Training prompt 1</div>
+                            <div class="prompt-title">Action 1: Enter the first training prompt</div>
                             <button class="copy-btn">Copy to clipboard</button>
                         </div>
                         <div class="prompt-content">You are a former journalist at Time magazine, and you've had a few articles published in The New Yorker. You know how to write very well, keeping your articles professional but not corporate. You appreciate a well-timed quippy sentence. You've moved from your career as a journalist and now write case studies that are used by a big tech company to market to merchants who are looking for a new commerce platform but want a partner to help them. Your writing balances professional clarity with engaging narrative—maintaining credibility while avoiding corporate jargon. You excel at transforming technical implementations into business-focused stories that resonate with decision-makers.
@@ -193,7 +203,7 @@ I'm going to give you a series of case study examples. I'd like you to learn the
 
                     <div class="prompt-box">
                         <div class="prompt-header">
-                            <div class="prompt-title">Training prompt 2</div>
+                            <div class="prompt-title">Action 2: Enter the second training prompt</div>
                             <button class="copy-btn">Copy to clipboard</button>
                         </div>
                         <div class="prompt-content">CASE STUDY EXAMPLE 2
@@ -241,7 +251,7 @@ By opting for a purely headless architecture native to Shopify that doesn't rely
 
                     <div class="prompt-box">
                         <div class="prompt-header">
-                            <div class="prompt-title">Training prompt 3</div>
+                            <div class="prompt-title">Action 3: Enter the third training prompt</div>
                             <button class="copy-btn">Copy to clipboard</button>
                         </div>
                         <div class="prompt-content">CASE STUDY EXAMPLE 3
@@ -293,7 +303,7 @@ The Shopify replatforming has given Stadium Goods a powerful, adaptable digital 
 
                     <div class="prompt-box">
                         <div class="prompt-header">
-                            <div class="prompt-title">Training prompt 4</div>
+                            <div class="prompt-title">Action 4: Enter the fourth training prompt</div>
                             <button class="copy-btn">Copy to clipboard</button>
                         </div>
                         <div class="prompt-content">CASE STUDY EXAMPLE 4
@@ -348,7 +358,7 @@ With this strategic shift to Shopify, quip is poised not only for immediate succ
 
                     <div class="prompt-box">
                         <div class="prompt-header">
-                            <div class="prompt-title">Training prompt 5</div>
+                            <div class="prompt-title">Action 5: Enter the fifth training prompt</div>
                             <button class="copy-btn">Copy to clipboard</button>
                         </div>
                         <div class="prompt-content">CASE STUDY EXAMPLE 5
@@ -401,7 +411,7 @@ Looking ahead, Bambi Baby is positioned for continued retail expansion. "The gro
 
                     <div class="prompt-box">
                         <div class="prompt-header">
-                            <div class="prompt-title">Training prompt 6</div>
+                            <div class="prompt-title">Action 6: Enter the sixth training prompt</div>
                             <button class="copy-btn">Copy to clipboard</button>
                         </div>
                         <div class="prompt-content">CASE STUDY EXAMPLE 6
@@ -443,7 +453,7 @@ The launch of Omy's refreshed online store was a glowing success. Thanks to the 
 
                     <div class="prompt-box">
                         <div class="prompt-header">
-                            <div class="prompt-title">Training prompt 7</div>
+                            <div class="prompt-title">Action 7: Enter the seventh training prompt</div>
                             <button class="copy-btn">Copy to clipboard</button>
                         </div>
                         <div class="prompt-content">&lt;CASE STUDY TEMPLATE&gt;
@@ -527,9 +537,10 @@ You can input that information now."</div>
                 </div>
             </section>
 
-            <!-- Step 3: Choose Your Adventure -->
+            <!-- Step 3: Choose your information format -->
             <section class="step-content" id="step3">
-                <h2>Step 3: Choose your own adventure</h2>
+                <div class="eyebrow-text">Step 3</div>
+                <h2>Choose your information format</h2>
                 <div class="content-area">
                     <p><strong>The information I have about the merchant lives:</strong></p>
                     
@@ -539,12 +550,12 @@ You can input that information now."</div>
                             <p>I'll use a worksheet to organize my thoughts</p>
                         </button>
                         <button class="path-btn" onclick="selectAdventureAndProceed('step4b')">
-                            <h3>🎤 In an interview with the merchant</h3>
-                            <p>I'll have a direct conversation with the merchant</p>
+                                                          <h3>🎤 In an interview transcript</h3>
+                            <p>I'll have a direct conversation with the merchant and use the transcript</p>
                         </button>
                         <button class="path-btn" onclick="selectAdventureAndProceed('step4c')">
-                            <h3>♻️ In an existing case study on my own site</h3>
-                            <p>I'd like to repurpose existing content</p>
+                                                          <h3>♻️ In a case study published on my site</h3>
+                            <p>I'll repurpose existing content</p>
                         </button>
                         <button class="path-btn" onclick="selectAdventureAndProceed('step4c')">
                             <h3>📄 In an existing draft</h3>
@@ -559,15 +570,16 @@ You can input that information now."</div>
 
             <!-- Step 4A-4C sections -->
             <section class="step-content" id="step4a">
-                <h2>Step 4: Draft the case study</h2>
+                <div class="eyebrow-text">Step 4</div>
+                <h2>Share the information</h2>
                 <h3>Use a short worksheet</h3>
                 <div class="content-area">
-                    <p>If you know the work you did with your merchant by heart and want to write it down as the input for the case study, start by filling out this short worksheet.</p>
+                    <p>If you know your merchant by heart, fill out this worksheet with the information that'll be used in the case study.</p>
 
 
-                    <div class="info-box danger">
-                        <h4>⚠️ Important: No auto-save</h4>
-                        <p style="font-size: 0.85rem;"><strong>Your work in this worksheet is NOT automatically saved.</strong> If you navigate away from this page or refresh your browser, you will lose all your progress. We recommend completing the entire worksheet in one session or copying your work to a separate document as you go.</p>
+                    <div class="info-box danger" style="color: #8b2635; border-color: #f5c6cb; background-color: #fdf2f2;">
+                        <h4 style="color: #8b2635;">✨ Heads up!</h4>
+                        <p style="font-size: 0.85rem; color: #8b2635;">Your work in this worksheet won't automatically save. If you navigate away from this page or refresh your browser, you'll lose your progress.</p>
                     </div>
 
                     <!-- Interactive Worksheet -->
@@ -662,7 +674,8 @@ You can input that information now."</div>
             </section>
 
             <section class="step-content" id="step4b">
-                <h2>Step 4: Draft the case study</h2>
+                <div class="eyebrow-text">Step 4</div>
+                <h2>Share the information</h2>
                 <h3>Interview the merchant</h3>
                 <div class="content-area">
                     <p>Conducting an interview with a merchant is the best way to gather information, uncover insights, and add a bit of humanity to your case study.</p>
@@ -696,8 +709,9 @@ You can input that information now."</div>
             </section>
 
             <section class="step-content" id="step4c">
-                <h2>Step 4: Draft the case study</h2>
-                <h3>Repurpose an existing case study from your own website or an existing draft</h3>
+                <div class="eyebrow-text">Step 4</div>
+                <h2>Share the information</h2>
+                <h3>Repurpose an existing draft or a case study published on your site</h3>
                 <div class="content-area">
                     <div class="prompt-box">
                         <div class="prompt-header">
@@ -722,7 +736,8 @@ When you understand this, say, "I'm ready to help repurpose your existing case s
 
             <!-- Step 5: Check Details -->
             <section class="step-content" id="step5">
-                <h2>Step 5: Check for the details</h2>
+                <div class="eyebrow-text">Step 5</div>
+                <h2>Check for the details</h2>
                 <div class="content-area">
                     <p>You've generated a draft! Now let's make sure it has all of the elements that make for a great Shopify case study.</p>
 
@@ -787,8 +802,8 @@ Once they have provided all the necessary additional information, draft a revise
                     </div>
 
                     <div class="info-box success" style="background: #e8f5e8; border: 1px solid #c8e6c9; color: #2e7d32;">
-                        <h4 style="color: #2e7d32;">📝 Updating your draft</h4>
-                        <p>Once you've run this prompt, you may see some areas where we suggest adding more information. Your AI tool will identify areas where you need to add more information. Follow its guidance until it feels the information is satisfactory and it prompts a new draft. You may have to go through this cycle a few times!</p>
+                        <h4 style="color: #2e7d32;">📝 Adding missing information</h4>
+                        <p>After you run this prompt, you may be asked to add more information. Follow your AI tool's suggestions. The tool will create a new draft once you provide the needed information. You may need to repeat this process a few times!</p>
                         <p style="font-weight: bold; font-size: 1.1rem; margin-top: 1rem; padding: 0.5rem; background: #c8e6c9; border-radius: 4px; text-align: center;">✅ Once you receive an "All clear!" from the quality assessment, you can move to the last step.</p>
                     </div>
 
@@ -802,17 +817,29 @@ Once they have provided all the necessary additional information, draft a revise
 
             <!-- Step 6: Edit Draft -->
             <section class="step-content" id="step6">
-                <h2>Step 6: Edit your draft (as a human)</h2>
+                <div class="eyebrow-text">Step 6</div>
+                <h2>Review your draft (as a human)</h2>
                 <div class="content-area">
-                    <p>The purpose of editing your draft is twofold: to check for accuracy and to make it the best it can be. So, please:</p>
+                    <p>The purpose of reviewing your draft is twofold: to check for accuracy and to make it the best it can be. We recommend:</p>
 
                     <ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
                         <li style="margin-bottom: 1rem;"><strong>Check (and double check!) the accuracy of the outputs.</strong> AI is a great tool, but it has a tendency to hallucinate, especially when it's not given enough information.</li>
-                        <li style="margin-bottom: 1rem;"><strong>Put your human abilities to work.</strong> While the outputs of these prompts act as a strong starting point, they're not perfect. Still put a dedicated effort into revising and shaping your case study into a story you feel proud of. We'll all benefit from it!</li>
+                        <li style="margin-bottom: 1rem;"><strong>Put your human abilities to work.</strong> While the outputs of these prompts act as a strong starting point, they're not perfect. Still put a dedicated effort into revising and shaping your case study into a story you feel proud of.</li>
                     </ul>
 
-                    <h4 style="color: #2c3e50; margin: 1.5rem 0 0.5rem 0;">Share required images</h4>
-                    <p style="margin: 0.5rem 0 1.5rem 0; font-size: 0.9rem;">Include a Google Drive link to these images in your submission.</p>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" onclick="goToStep('step5')">Back</button>
+                    <button class="btn btn-primary" onclick="goToStep('step7')">Next: step 7</button>
+                </div>
+            </section>
+
+            <!-- Step 7: Submit Draft -->
+            <section class="step-content" id="step7">
+                <div class="eyebrow-text">Step 7</div>
+                <h2>Submit your draft</h2>
+                <div class="content-area">
+                    <p>Submit images alongside your draft for the case study layout. Include a Google Drive link to these images in your submission.</p>
 
                     <!-- Image Requirements with Dropdowns -->
                     <div style="margin: 1rem 0;">
@@ -864,7 +891,7 @@ Once they have provided all the necessary additional information, draft a revise
 
                 </div>
                 <div class="navigation-buttons">
-                    <button class="btn btn-secondary" onclick="goToStep('step5')">Back</button>
+                    <button class="btn btn-secondary" onclick="goToStep('step6')">Back</button>
                     <button class="btn btn-success" onclick="showCompletion()">Journey complete!</button>
                 </div>
             </section>
@@ -883,13 +910,7 @@ Once they have provided all the necessary additional information, draft a revise
         </main>
     </div>
 
-    <!-- Sliding Sidebar for Step 2B -->
-    <div class="sliding-sidebar" id="freeAccountSidebar" onclick="toggleSlidingSidebar()" style="position: fixed; top: 50%; right: 0px; transform: translateY(-50%); width: 300px; background: #e8f5e8; border: 1px solid #c8e6c9; border-radius: 8px 0 0 8px; padding: 1.5rem; box-shadow: -4px 0 12px rgba(0,0,0,0.1); transition: right 0.4s ease; z-index: 1000; cursor: pointer;">
-        <div style="position: absolute; top: 10px; left: 15px; color: #2e7d32; font-size: 1.2rem;" id="freeAccountToggle">▶</div>
-        <div class="sidebar-content">
-            <p style="color: #2e7d32; font-size: 0.9rem; line-height: 1.4; margin-left: 30px;">Without a pro version of ChatGPT or Claude, you'll need to manually train the model. This is straightforward, though it takes a few steps.</p>
-        </div>
-    </div>
+
 
     <!-- Sliding Sidebar for Step 3 -->
     <div class="sliding-sidebar" id="step3Sidebar" onclick="toggleStep3Sidebar()" style="position: fixed; top: 50%; right: 0px; transform: translateY(-50%); width: 300px; background: #e8f5e8; border: 1px solid #c8e6c9; border-radius: 8px 0 0 8px; padding: 1.5rem; box-shadow: -4px 0 12px rgba(0,0,0,0.1); transition: right 0.4s ease; z-index: 1000; cursor: pointer;">
