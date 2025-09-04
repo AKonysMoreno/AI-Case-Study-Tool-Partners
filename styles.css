@@ -34,7 +34,7 @@ header h1 {
 }
 
 .eyebrow-text {
-    text-align: left;
+    text-align: center;
     color: #6c757d;
     font-size: 0.75rem;
     font-weight: 500;
@@ -630,9 +630,7 @@ header h1 {
 }
 
 
-/* Path option container with recommended badge */
-.path-option-container {
-}
+/* Path option container with recommended badge - styles added as needed */
 
 /* Sidebar hover effects for better UX */
 .sliding-sidebar:hover {
