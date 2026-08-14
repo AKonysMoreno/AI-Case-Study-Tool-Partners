@@ -25,8 +25,19 @@ A web-based tool designed to help Shopify partners create comprehensive AI case 
 
 ## Live Demo
 
-You can access the live tool at: https://akonysmoren.github.io/AI-Case-Study-Tool-Partners/
+The tool is currently being republished. The previous demo URL
+(`https://akonysmoren.github.io/AI-Case-Study-Tool-Partners/`) is no longer
+available — it was hosted from a personal repository that has since been
+retired. A new GitHub Pages URL will be published once this repository is made
+public and transferred to the `Shopify` organization.
+
+In the meantime, the tool runs entirely client-side: clone the repository and
+open `index.html` in a browser.
 
 ## Contributing
 
-This tool is designed specifically for Shopify partners working on AI implementations and case studies. 
+This tool is designed specifically for Shopify partners working on AI implementations and case studies.
+
+## License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
