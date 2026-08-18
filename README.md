@@ -13,9 +13,11 @@ A web-based tool designed to help Shopify partners create comprehensive AI case 
 
 ## Getting Started
 
-1. Open `index.html` in your web browser
+1. Open the tool: **<https://shopify.github.io/AI-Case-Study-Tool-Partners/>**
 2. Follow the step-by-step process starting with "Start here"
 3. Complete each step to build your comprehensive AI case study
+
+No installation or setup is required — the tool runs entirely in your browser.
 
 ## Project Structure
 
@@ -25,14 +27,17 @@ A web-based tool designed to help Shopify partners create comprehensive AI case 
 
 ## Live Demo
 
-The tool is currently being republished. The previous demo URL
-(`https://akonysmoren.github.io/AI-Case-Study-Tool-Partners/`) is no longer
-available — it was hosted from a personal repository that has since been
-retired. A new GitHub Pages URL will be published once this repository is made
-public and transferred to the `Shopify` organization.
+**<https://shopify.github.io/AI-Case-Study-Tool-Partners/>**
 
-In the meantime, the tool runs entirely client-side: clone the repository and
-open `index.html` in a browser.
+The tool is a static, client-side site published with GitHub Pages from the
+`main` branch. Any change merged to `main` is deployed automatically.
+
+To run it locally instead, clone the repository and open `index.html` in a
+browser — there is no build step.
+
+> **Note:** the previous URL, `akonysmoreno.github.io/AI-Case-Study-Tool-Partners`,
+> was served from a personal repository and is no longer available. Please
+> update any saved links to the address above.
 
 ## Contributing
 
